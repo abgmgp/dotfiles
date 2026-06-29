@@ -35,11 +35,7 @@ require("lazy").setup({
     priority = 1000, 
     config = true, 
     opts = ...
-  },
-  {
-    "folke/twilight.nvim",
-    opts = {}
-  },
+  }, 
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
@@ -66,8 +62,3 @@ vim.cmd("set shortmess+=I")
 vim.o.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
 vim.keymap.set("n", "<leader>e", ":Telescope file_browser<CR>")
-vim.keymap.set("n", "<leader>t", ":Twilight<CR>")
-vim.api.nvim_create_autocmd("BufReadPost", {
-  once = true,
-  callback = function() vim.cmd("Twilight") end,
-})
